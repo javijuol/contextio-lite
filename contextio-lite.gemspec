@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['javier@promivia.com']
   spec.summary       = %q{Provides interface to Context.IO Lite API}
   spec.description   = %q{Short implementation of a client rest API for the Context.IO Lite API}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/javijuol/contextio-lite'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
