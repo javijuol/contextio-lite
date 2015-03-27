@@ -1,6 +1,5 @@
 require 'contextio/api/resource'
 require 'contextio/api/association_helpers'
-# require_relative 'body_part'
 
 module ContextIO
   class Lite

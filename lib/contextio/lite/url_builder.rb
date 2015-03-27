@@ -11,7 +11,7 @@ module ContextIO
 
       # Tells you the right URL for a resource to fetch attributes from.
       #
-      # @param [ContextIO::Resource, ContextIO::ResourceCollection] resource The
+      # @param [Contextio::Resource, Contextio::ResourceCollection] resource The
       #   resource or resource collection.
       #
       # @return [String] The path for that resource in the API.

@@ -1,15 +1,7 @@
 module ContextIO
   class Lite
+    include ContextIO
 
-    VERSION = '0.0.1'
-
-    def self.version
-      VERSION
-    end
-
-    # @private
-    # Handle for the `API` instance. For internal use only.
-    attr_reader :api
 
     # Creates a new `ContextIO` instance and makes a new handle for the API.
     # This is your entry point to your Context.IO account.  For a web app, you

@@ -204,7 +204,7 @@ module ContextIO
               instance_variable_get("@#{association_name}")
             else
               association_attrs = api_attributes[association_name.to_s]
-              association_class = ContextIO::API::AssociationHelpers.class_for_association_name(association_name)
+              association_class = Contextio::API::AssociationHelpers.class_for_association_name(association_name)
 
               if association_attrs && !association_attrs.empty?
                 instance_variable_set("@#{association_name}", association_class.new(api, association_attrs))

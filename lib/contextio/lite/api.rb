@@ -8,7 +8,7 @@ module ContextIO
 			VERSION = 'lite'
 
 			def self.user_agent_string
-				"contextio-#{self.version}-ruby-#{ContextIO::Lite.version}"
+				"contextio-#{self.version}-ruby-#{ContextIO.version}"
 			end
 
 			# @param [Object] resource The resource you want the URL for.
