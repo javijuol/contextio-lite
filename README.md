@@ -26,7 +26,7 @@ Or install it yourself as:
 ```ruby
 require 'contextio'
 
-client = ContextIO::Lite.new(API_KEY, API_SECRET)
+client = ContextIO.lite(API_KEY, API_SECRET)
 ```
 
 ### Dealing with users
@@ -40,7 +40,7 @@ p client.users.map(&:id)
 CRUD
 
 ```ruby
-user = client.users.create email: 'bob@gmail.com', first_name: 'Bob', server: 'imap.gmail.com' username: 'bob', 'use_sll':true, 'port': 993, 'type': 'IMAP
+user = client.users.create email: 'bob@gmail.com', first_name: 'Bob', server: 'imap.gmail.com' username: 'bob', use_sll:true, port: 993, type: 'IMAP'
 
 user_id = user.id
 
