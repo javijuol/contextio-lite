@@ -24,7 +24,7 @@ Or install it yourself as:
 ### Get a client
 
 ```ruby
-require 'contextio/lite'
+require 'contextio'
 
 client = ContextIO::Lite.new(API_KEY, API_SECRET)
 ```
