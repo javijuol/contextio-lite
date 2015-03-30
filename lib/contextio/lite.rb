@@ -2,7 +2,6 @@ module ContextIO
   class Lite
     include ContextIO
 
-
     # Creates a new `ContextIO` instance and makes a new handle for the API.
     # This is your entry point to your Context.IO account.  For a web app, you
     # probably want to instantiate this in some kind of initializer and keep it
@@ -25,10 +24,6 @@ module ContextIO
     end
   end
 end
-
-require_relative 'api/association_helpers'
-require_relative 'api/resource'
-require_relative 'api/resource_collection'
 
 require_relative 'lite/api'
 require_relative 'lite/email_account'
