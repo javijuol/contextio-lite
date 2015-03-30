@@ -8,7 +8,7 @@ It works in the same way as the official, calling first a user object and then w
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'contextio-lite'
+gem 'contextio-lite', :require => 'contextio'
 ```
 
 And then execute:
