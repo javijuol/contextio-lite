@@ -102,6 +102,7 @@ module ContextIO
 			# @return [Faraday::Response] The response object from the request.
 			def oauth_request(method, resource_path, params, headers=nil)
 				normalized_params = params.inject({}) do |normalized_params, (key, value)|
+					value = (value ? 1 : 0) if value == !!value
 					normalized_params[key.to_sym] = value
 					normalized_params
 				end
