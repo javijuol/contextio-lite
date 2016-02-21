@@ -72,9 +72,16 @@ module ContextIO
 			# @raise [API::Error] if the response code isn't in the 200 or 300 range.
 			def request(method, resource_path, params = {})
 				response = oauth_request(method, resource_path, params, { 'Accept' => 'application/json' })
-
 				with_error_handling(response) do |response|
-					parse_json(response.body)
+					# Depending on whether the response is formatted in JSON or if it is a file
+					if response.headers['content-type'] == "application/json"
+						parse_json(response.body)
+					else
+						{
+							content: response.body,
+							headers: response.headers
+						}
+					end
 				end
 			end
 

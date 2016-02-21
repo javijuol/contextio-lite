@@ -10,6 +10,7 @@ module ContextIO
       self.association_name = :message
 
       # has_many :body_parts
+      has_many :attachment_files
 
       lazy_attributes :sent_at, :addresses, :person_info, :email_message_id, :message_id,
                       :attachments, :subject, :folders, :bodies, :references, :in_reply_to,

@@ -100,6 +100,26 @@ client[user_id].create callback_url, failure_url, filter_folder_added: 'INBOX', 
 
 So it will call the callback_url every time there is a new message on the user INBOX folder, posting the message info and body included.
 
+### Attachments
+To get the list of attachments metadata of a message :
+````ruby
+client[user_id].email_accounts[account_label].folders[folder_name].messages[message_id].attachments
+````
+
+To get metadata on a specific attachment :
+````ruby
+client[user_id].email_accounts[account_label].folders[folder_name].messages[message_id].attachments[attachment_id]
+````
+
+To get a specific attachment file :
+````ruby
+
+attachment= client[user_id].email_accounts[account_label].folders[folder_name].messages[message_id].attachment_files[attachment_id]
+
+attachment.content # => The file body
+attachment.headers # => The response headers
+
+````
 
 ## Contributing
 

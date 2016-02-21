@@ -3,6 +3,7 @@ require_relative 'folder_collection'
 require_relative 'message_collection'
 require_relative 'user_collection'
 require_relative 'webhook_collection'
+require_relative 'attachment_collection'
 
 module ContextIO
   class Lite
@@ -80,6 +81,14 @@ module ContextIO
 
       register_url ContextIO::Lite::Webhook do |webhook|
         "users/#{webhook.user.id}/webhooks/#{webhook.webhook_id}"
+      end
+
+      register_url ContextIO::Lite::AttachmentCollection do |attachments|
+        "users/#{attachments.message.folder.email_account.user.id}/email_accounts/#{uri_encode attachments.message.folder.email_account.label}/folders/#{uri_encode attachments.message.folder.name}/messages/#{uri_encode attachments.message.message_id}/attachments"
+      end
+
+      register_url ContextIO::Lite::Attachment do |attachment|
+        "users/#{attachment.message.folder.email_account.user.id}/email_accounts/#{uri_encode attachment.message.folder.email_account.label}/folders/#{uri_encode attachment.message.folder.name}/messages/#{uri_encode attachment.message.message_id}/attachments/#{attachment.attachment_id}"
       end
 
       def self.uri_encode(param)
